@@ -18,6 +18,10 @@ const weekdays = [
 
 const calendar = document.getElementById("calendar");
 
+function timeslot(date) {
+  clicked = date;
+}
+
 //  create a function to load the calendar when the page loads
 function load() {
   const dt = new Date();
@@ -72,7 +76,10 @@ function load() {
     if (i > paddingDays) {
       daySquare.innerText = i - paddingDays;
 
-      daySquare.addEventListener("click", () => console.log("click"));
+      daySquare.addEventListener(
+        "click",
+        () => (window.location.href = "day.html")
+      );
     } else {
       daySquare.classList.add("padding");
     }

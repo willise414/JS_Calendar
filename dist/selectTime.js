@@ -1,3 +1,11 @@
+window.onload = setCurrentDate();
+
+function setCurrentDate() {
+  const selectedDate = localStorage.getItem(events, clicked);
+  console.log(selectedDate);
+  document.getElementById("dayDisplay").innerHTML = selectedDate;
+}
+
 // load slots for timeslot
 function loadSlots() {
   const slotSelection = document.getElementById("slotSelection");
@@ -49,9 +57,11 @@ function loadSlots() {
         timeSquare.innerHTML = "";
     }
     timeSquare.addEventListener("click", (e) => {
-      timeSquare.innerHTML = "Sean Williams";
+      timeSquare.innerHTML += "<br />" + "Sean Williams";
+      //move to CSS after testing
       timeSquare.style.backgroundColor = "red";
       timeSquare.style.color = "white";
+      timeSquare.style.textAlign = "center";
       console.log(e.target.innerHTML);
     });
 

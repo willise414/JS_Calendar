@@ -26,6 +26,14 @@ button {
 #header button {
   background-color: #92a1d1;
 }
+#dateHeader {
+  padding: 40px;
+  color: #d36c6c;
+  font-size: 26px;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+}
 #container {
   width: 770px;
 }

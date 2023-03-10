@@ -20,6 +20,11 @@ const calendar = document.getElementById("calendar");
 
 function timeslot(date) {
   clicked = date;
+
+  localStorage.setItem(events, clicked);
+  console.log(localStorage);
+
+  window.location.href = "day.html";
 }
 
 //  create a function to load the calendar when the page loads
@@ -48,7 +53,7 @@ function load() {
   const dateString = firstDayOfMonth.toLocaleDateString("en-us", {
     weekday: "long",
     year: "numeric",
-    month: "numeric",
+    month: "long",
     day: "numeric",
   });
   //   console.log(dateString);
@@ -78,7 +83,13 @@ function load() {
 
       daySquare.addEventListener(
         "click",
-        () => (window.location.href = "day.html")
+        // () => (window.location.href = "day.html")
+        () =>
+          timeslot(
+            `${dt.toLocaleDateString("en-us", { month: "long" })} ${
+              i - paddingDays
+            }, ${year}`
+          )
       );
     } else {
       daySquare.classList.add("padding");
